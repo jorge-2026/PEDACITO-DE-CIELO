@@ -1,0 +1,292 @@
+/* ==========================================
+   ESTILOS GENERALES Y FUENTES
+   ========================================== */
+body {
+    background-color: #f4f9f9;
+    background-image: url("https://www.transparenttextures.com/patterns/clouds.png");
+    background-attachment: fixed;
+    font-family: 'Quicksand', sans-serif;
+    color: #555;
+    margin: 0;
+    padding: 0;
+}
+
+/* Títulos principales con onda divertida */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #ff7b90; /* Un tono rosa viejo/pastel con mucha personalidad */
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para que resalte */
+}
+
+/* ==========================================
+   HEADER Y MENÚ DE NAVEGACIÓN
+   ========================================== */
+header {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px dashed #bce6eb; /* Borde de costura divertido */
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+header h2 {
+    font-size: 1.3rem;
+    color: #65c3c8; /* Celeste pastel vibrante */
+    margin-top: 5px;
+}
+
+.navbar {
+    background-color: #65c3c8;
+    padding: 10px 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+    display: inline-block;
+}
+
+.nav-links a:hover {
+    transform: scale(1.1); /* Efecto de agrandado al pasar el mouse */
+    color: #fff0f5;
+}
+
+/* ==========================================
+   SECCIÓN HERO (VIDEO)
+   ========================================== */
+.hero {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.hero-content {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border: 2px solid #fff;
+}
+
+.btn-main {
+    display: inline-block;
+    background-color: #ff7b90;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 25px;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(255, 123, 144, 0.4);
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    background-color: #e06377;
+    transform: translateY(-3px);
+}
+
+/* ==========================================
+   GRILLA DE PRODUCTOS Y TARJETAS (Efecto Giro)
+   ========================================== */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.title {
+    font-size: 2.2rem;
+    color: #ffb7b2;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Contenedor de la tarjeta 3D */
+.card-box {
+    background-color: transparent;
+    height: 450px;
+    perspective: 1000px; /* Necesario para el efecto 3D */
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Al pasar el mouse, la tarjeta gira */
+.card-box:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Cara Frontal */
+.card-front {
+    background-color: #ffffff;
+    border: 2px solid #f0eae4;
+}
+
+.card-front img {
+    max-height: 200px;
+    max-width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+/* Cara Trasera */
+.card-back {
+    background-color: #fff8f6; /* Un tono cálido y suave */
+    transform: rotateY(180deg);
+    border: 2px dashed #ffb7b2;
+    overflow-y: auto; /* Por si el texto es largo, genera barrita interna */
+}
+
+.back-text {
+    width: 100%;
+}
+
+.back-text ul {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.back-text li {
+    margin-bottom: 8px;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #65c3c8;
+}
+
+/* Botonera interna */
+.btn-trigger {
+    background-color: #f0eae4;
+    color: #777;
+    padding: 8px 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-wpp {
+    background-color: #25d366;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3);
+}
+
+.btn-wpp a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   BOTÓN FLOTANTE WHATSAPP Y FOOTER
+   ========================================== */
+.wpp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    transition: transform 0.3s;
+}
+
+.wpp-float:hover {
+    transform: scale(1.1) rotate(10deg); /* Gira un poquito al pasar el mouse */
+}
+
+footer {
+    background-color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 3px dashed #bce6eb;
+    margin-top: 60px;
+}
+
+.frase-personal {
+    font-style: italic;
+    color: #777;
+    max-width: 600px;
+    margin: 0 auto 15px auto;
+    font-size: 1.1rem;
+}
+
+.sep {
+    height: 2px;
+    background-color: #f4f9f9;
+    width: 100px;
+    margin: 15px auto;
+}
